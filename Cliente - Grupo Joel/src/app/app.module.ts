@@ -26,7 +26,7 @@ import { CuartaPaginaComponent } from './cuarta-pagina/cuarta-pagina.component';
 import { QuintaPaginaComponent } from './quinta-pagina/quinta-pagina.component';
 
 import { HttpClientModule } from '@angular/common/http';
-//import { ServiciosService } from '../app/service/servicios.service';
+import { ServiciosService } from '../app/service/servicios.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule      //modulo HTTP
   ],
   providers: [
-    //ServiciosService
+    ServiciosService
   ],
   bootstrap: [AppComponent]
 })
