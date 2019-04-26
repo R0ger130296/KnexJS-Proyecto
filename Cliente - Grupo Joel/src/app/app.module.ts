@@ -25,8 +25,8 @@ import { AlarconComponent } from './alarcon/alarcon.component';
 import { CuartaPaginaComponent } from './cuarta-pagina/cuarta-pagina.component';
 import { QuintaPaginaComponent } from './quinta-pagina/quinta-pagina.component';
 
-
-
+import { HttpClientModule } from '@angular/common/http';
+//import { ServiciosService } from '../app/service/servicios.service';
 
 @NgModule({
   declarations: [
@@ -59,8 +59,11 @@ import { QuintaPaginaComponent } from './quinta-pagina/quinta-pagina.component';
     MatFormFieldModule,
     MatRadioModule,
     ReactiveFormsModule,
+    HttpClientModule      //modulo HTTP
   ],
-  providers: [],
+  providers: [
+    //ServiciosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
