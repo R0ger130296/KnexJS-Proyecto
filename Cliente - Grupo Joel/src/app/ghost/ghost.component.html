@@ -59,28 +59,24 @@
 </div>
 <form class="example-form">
     <mat-form-field class="example-full-width">
-        <input [(ngModel)]="numero" type="text" [ngModelOptions]="{standalone: true}"matInput placeholder=  'NOMBRE DEL CAMPUS' value="Sushi" >
+        <input [(ngModel)]="campus.nombre" name="nombre" type="text" [ngModelOptions]="{standalone: true}" matInput placeholder='NOMBRE DEL CAMPUS'>
       </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input [(ngModel)]="nombre" type="text" [ngModelOptions]="{standalone: true}"matInput placeholder="DIRECCIÓN DEL CAMPUS" value="Sushi">
+      <input [(ngModel)]="campus.calle_pri" name="calle_pri" type="text" [ngModelOptions]="{standalone: true}" matInput placeholder="DIRECCIÓN DEL CAMPUS">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">        
+      <input [(ngModel)]="campus.pais" name="pais" [ngModelOptions]="{standalone: true}" matInput placeholder="PAÍS">        
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        
-      <input [(ngModel)]="apellido" [ngModelOptions]="{standalone: true}"matInput placeholder="PAÍS" value="Sushi">
-        
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <input [(ngModel)]="Email" type="email" [ngModelOptions]="{standalone: true}"matInput placeholder="Email" value="Sushi">
-        
+        <input [(ngModel)]="Email" type="email" [ngModelOptions]="{standalone: true}" matInput placeholder="Email">        
      </mat-form-field>
 
      <mat-form-field class="example-full-width">
       <span matPrefix>+593 &nbsp;</span>
-      <input [(ngModel)]="telefono" type="number" [ngModelOptions]="{standalone: true}" matInput placeholder="TELÉFONO" value= 'telefono' max="10">
-      
+      <input [(ngModel)]="campus.telefono" name="telefono" type="number" [ngModelOptions]="{standalone: true}" matInput placeholder="TELÉFONO" min="0" max="10">      
     </mat-form-field>
     
   </form>
@@ -91,5 +87,5 @@
   <img src="../../assets/img/3.png" >
 </div>
 <div class="boton1">
-  <button  type="button" class="w3-button w3-display-topright" style="font-weight:bold;"><a href='francisco' >GUARDAR</a></button>
+  <button  type="button" class="w3-button w3-display-topright" style="font-weight:bold;"><a href='francisco' (click)="post(campus)">GUARDAR</a></button>
 </div>
