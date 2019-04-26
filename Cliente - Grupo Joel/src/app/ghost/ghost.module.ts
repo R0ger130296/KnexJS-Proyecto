@@ -19,7 +19,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
-
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [GhostComponent],
@@ -42,7 +42,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatFormFieldModule,
     MatRadioModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ]
 })
 export class GhostModule { }

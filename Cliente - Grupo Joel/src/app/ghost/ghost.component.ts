@@ -3,6 +3,9 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
 
+import { ServiciosService } from '../service/servicios.service';
+import { Campus } from '../models/campus';
+
 
 @Component({
   selector: 'app-ghost',
@@ -11,7 +14,11 @@ import {take} from 'rxjs/operators';
   
 })
 export class GhostComponent implements OnInit {
-  constructor(private ngZone: NgZone) {}
+
+  campus: Campus;
+  data: Array<Campus>;
+
+  constructor(private ngZone: NgZone, private Servicios: ServiciosService) {}
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
@@ -25,7 +32,34 @@ export class GhostComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+    this.get();
+    this.campus = new Campus();
   }
+
+  get() {
+    this.Servicios.get('campus').subscribe(
+        response => {
+            this.data = response as Array<Campus>;
+        },
+        error => {
+            console.log(error);
+        }
+    );
+}
+
+post(){
+    this.Servicios.post('campus',this.campus).subscribe(
+      response => {
+        this.get();
+      },
+      error => {
+        console.log(error);
+      }
+      
+    );
+}
+
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
 }
 export interface PeriodicElement {
