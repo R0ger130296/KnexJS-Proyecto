@@ -1,7 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-Parser');
 const PORT = process.env.PORT || 3001;
 const knex = require('./knex/knex.js');
+
 const app = express();
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/campus', function(req, res) {
     knex.select().from('campus').then(function(campus) {
@@ -13,8 +18,8 @@ app.get('/campus', function(req, res) {
 
 app.post('/campus', function(req, res) {
   knex('campus').insert({
-    id_campus: 2,
-    nombre: "Instituto Benito Juarez"
+    nombre: req.body.nombre,
+    calle_pri: req.body.calle_pri 
   })
   .then(function() {
     knex.select().from('campus')
