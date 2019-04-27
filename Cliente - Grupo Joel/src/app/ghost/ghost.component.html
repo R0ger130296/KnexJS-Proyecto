@@ -29,18 +29,18 @@
         
                   <ng-container matColumnDef="numero">
                     <th mat-header-cell *matHeaderCellDef> NOMBRE DEL CAMPUS </th>
-                    <td mat-cell *matCellDef="let element"> {{numero}} </td>
+                    <td mat-cell *matCellDef="let element"> {{campus.nombre}} </td>
                   </ng-container>
               
               
                   <ng-container matColumnDef="nombre">
                     <th mat-header-cell *matHeaderCellDef>DIRECCIÓN DEL CAMPUS</th>
-                    <td mat-cell *matCellDef="let element"> {{nombre}}</td>
+                    <td mat-cell *matCellDef="let element"> {{campus.calle_pri}}</td>
                   </ng-container>
             
                   <ng-container matColumnDef="apellido">
                     <th mat-header-cell *matHeaderCellDef> PAÍS </th>
-                    <td mat-cell *matCellDef="let element"> {{apellido}} </td>
+                    <td mat-cell *matCellDef="let element"> {{campus.pais}} </td>
                   </ng-container>
           
                   <ng-container matColumnDef="email">
@@ -50,7 +50,7 @@
                   
                   <ng-container matColumnDef="telefono">
                     <th mat-header-cell *matHeaderCellDef> TELÉFONO</th>
-                    <td mat-cell *matCellDef="let element"> {{telefono}} </td>
+                    <td mat-cell *matCellDef="let element"> {{campus.telefono}} </td>
                   </ng-container>
                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

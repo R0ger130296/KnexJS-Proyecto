@@ -51,6 +51,7 @@ post(){
     this.Servicios.post('campus',this.campus).subscribe(
       response => {
         this.get();
+        console.log(this.get);
       },
       error => {
         console.log(error);

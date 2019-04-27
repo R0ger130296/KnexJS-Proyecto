@@ -13,6 +13,16 @@ module.exports = {
     },
     seeds: {
       directory: __dirname + '/knex/seeds'
-    }
-  }
+    },
+  },
+  production: {
+    cliente: 'pg',
+    connection: process.env.DATABASE_URL,
+    migrations: {
+      directory: __dirname + '/knex/migrations',
+    },
+    seeds: {
+      directory: __dirname + '/knex/seeds'
+    },
+  },
 }
