@@ -1,5 +1,5 @@
 const express = require('express');
-const bodyParser = require('body-Parser');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const PORT = process.env.PORT || 3001;
 const knex = require('./knex/knex.js');
